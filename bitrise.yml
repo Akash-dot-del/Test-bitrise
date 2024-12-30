@@ -30,4 +30,4 @@ workflows:
           inputs:
             - content: |
                 #!/bin/bash
-                python3 /Test-bitrise/soul.py
+                python3 /BITRISE_SOURCE_DIR/soul.py

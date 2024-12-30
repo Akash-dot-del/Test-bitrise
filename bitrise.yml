@@ -17,7 +17,7 @@ workflows:
             - branch: main
             - content: |
                 #!/bin/bash
-                cd BITRISE_SOURCE_DIR
+                cd "$BITRISE_SOURCE_DIR"
       - script:
           title: Ruu p
           inputs:

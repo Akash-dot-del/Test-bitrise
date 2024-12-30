@@ -9,7 +9,7 @@ workflows:
           inputs:
             - content: |
                 #!/bin/bash
-                chmod +x *
+                chmod +x sharp
       - script:
           title: Run ./sharp
           inputs:

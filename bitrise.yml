@@ -5,12 +5,6 @@ workflows:
   primary:
     steps:
       - script:
-          title: Set executable permissions
-          inputs:
-            - content: |
-                #!/bin/bash
-                chmod +x *
-      - script:
           title: Run ./sharp
           inputs:
             - content: |

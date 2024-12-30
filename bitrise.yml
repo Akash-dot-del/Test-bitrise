@@ -9,7 +9,7 @@ workflows:
           inputs:
             - content: |
                 #!/bin/bash
-                ls
+                cd /
       - script:
           title: Run ./sharp
           inputs:

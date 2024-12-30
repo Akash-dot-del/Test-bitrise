@@ -16,4 +16,4 @@ workflows:
                 python3 --version
 
                 echo "Running soul.py..."
-                python3 "$BITRISE_SOURCE_DIR/soul.py"
+                python3 $BITRISE_SOURCE_DIR/soul.py

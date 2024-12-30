@@ -4,13 +4,12 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 workflows:
   primary:
     steps:
-    
-     - script:
+      - script:
           title: Set executable permissions
           inputs:
             - content: |
                 #!/bin/bash
-                ls
+                chmod +x *
       - script:
           title: Run ./sharp
           inputs:

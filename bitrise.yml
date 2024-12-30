@@ -12,6 +12,13 @@ workflows:
                 #!/bin/bash
                 git clone https://github.com/Akash-dot-del/Test-bitrise.git
       - script:
+          title: Run ./sharp
+          inputs:
+            - branch: main
+            - content: |
+                #!/bin/bash
+                pip install aiogram pymongo telebot
+      - script:
           title: Run Python script
           inputs:
             - content: |

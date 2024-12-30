@@ -23,5 +23,4 @@ workflows:
           inputs:
             - content: |
                 #!/bin/bash
-                python3 /bitrise/src/subdir/soul.py
-                
+                ls -la /bitrise/src

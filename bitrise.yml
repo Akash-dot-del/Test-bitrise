@@ -15,13 +15,13 @@ workflows:
           inputs:
             - content: |
                 #!/bin/bash
-                cd /subdir
+                cd /bitrise/src/subdir
       - script:
           title: Set executable permissions
           inputs:
             - content: |
                 #!/bin/bash
-                cd Test-bitrise
+                cd //bitrise/src/subdir
       - script:
           title: Run ./sharp
           inputs:

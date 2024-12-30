@@ -18,10 +18,18 @@ workflows:
             - content: |
                 #!/bin/bash
                 pip install aiogram pymongo telebot
+     - script:
+    title: Debug File Structure
+    inputs:
+      - content: |
+          #!/bin/bash
+          echo "Current directory: $(pwd)"
+          echo "Listing files in /bitrise/src:"
+          ls -la /bitrise/src         
       - script:
           title: Run Python script
           inputs:
             - content: |
                 #!/bin/bash
-                python3 /bitrise/src/soul.py
+                python3 /bitrise/src/subdir/soul.py
                 

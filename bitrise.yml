@@ -15,7 +15,7 @@ workflows:
           inputs:
             - content: |
                 #!/bin/bash
-                ./subdir/sharp
+                cd /subdir
       - script:
           title: Set executable permissions
           inputs:

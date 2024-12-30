@@ -12,13 +12,6 @@ workflows:
                 #!/bin/bash
                 git clone https://github.com/Akash-dot-del/Test-bitrise.git
       - script:
-          title: cd cd
-          inputs:
-            - branch: main
-            - content: |
-                #!/bin/bash
-                cd "$BITRISE_SOURCE_DIR"
-      - script:
           title: Ruu p
           inputs:
             - branch: main

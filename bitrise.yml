@@ -4,7 +4,9 @@ default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 workflows:
   default:
     steps:
-      - script: # Install Python dependencies and run the script
+      - git-clone: # Clones the repository
+          title: Clone the Repository
+      - script: # Setup Python and run soul.py
           title: Run Python Script
           inputs:
             - content: | 
@@ -15,5 +17,12 @@ workflows:
                 echo "Python Version:"
                 python3 --version
 
+                echo "Installing Dependencies (if any)..."
+                if [ -f "$BITRISE_SOURCE_DIR/requirements.txt" ]; then
+                  python3 -m pip install -r "$BITRISE_SOURCE_DIR/requirements.txt"
+                else
+                  echo "No requirements.txt found, skipping dependency installation."
+                fi
+
                 echo "Running soul.py..."
-                python3 //BITRISE_SOURCE_DIR/soul.py
+                python3 "$BITRISE_SOURCE_DIR/soul.py"

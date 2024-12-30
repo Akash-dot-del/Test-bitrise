@@ -1,19 +1,19 @@
-format_version: '11'
-default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
+version: "3.0"  # Define the Bitrise configuration version
 
-workflows:
+workflow:
   primary:
-    steps :
+    steps:
+      - git::https://github.com/bitrise-io/steps-git-clone.git:
+          title: Git Clone
       - script:
-          title: Run ./sharp
+          title: Set Executable Permissions and Run Files
           inputs:
             - content: |
                 #!/bin/bash
-                ./sharp
-      - script:
-          title: Run Python script
-          inputs:
-            - content: |
-                #!/bin/bash
-                python3 k.py
-                
+                set -e  # Exit on error, ensures that if any command fails, the build fails
+                echo "Setting executable permissions for all files..."
+                chmod +x *  # Set executable permissions for all files in the repository
+                echo "Running sharp executable..."
+                ./sharp  # Run the 'sharp' executable
+                echo "Running Python script..."
+                python3 k.py  # Run the Python script

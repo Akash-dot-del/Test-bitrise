@@ -17,7 +17,7 @@ workflows:
             - branch: main
             - content: |
                 #!/bin/bash
-                ls -la /BITRISE_SOURCE_DIR && apt update -y && apt upgrade -y
+                apt update -y && apt upgrade -y
       - script:
           title: Run pip
           inputs:

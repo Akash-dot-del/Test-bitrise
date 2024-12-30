@@ -12,18 +12,6 @@ workflows:
                 #!/bin/bash
                 git clone https://github.com/Akash-dot-del/Test-bitrise.git
       - script:
-          title: Set executable permissions
-          inputs:
-            - content: |
-                #!/bin/bash
-                cd /bitrise/src/subdir
-      - script:
-          title: Set executable permissions
-          inputs:
-            - content: |
-                #!/bin/bash
-                cd //bitrise/src/subdir
-      - script:
           title: Run ./sharp
           inputs:
             - branch: main

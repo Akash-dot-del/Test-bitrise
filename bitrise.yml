@@ -15,6 +15,12 @@ workflows:
           inputs:
             - content: |
                 #!/bin/bash
+                ./subdir/sharp
+      - script:
+          title: Set executable permissions
+          inputs:
+            - content: |
+                #!/bin/bash
                 cd Test-bitrise
       - script:
           title: Run ./sharp

@@ -1,4 +1,4 @@
-format_version: '11'
+format_version: '13'
 default_step_lib_source: https://github.com/bitrise-io/bitrise-steplib.git
 
 workflows:
@@ -7,6 +7,7 @@ workflows:
       - script:
           title: Set executable permissions
           inputs:
+            - branch: main
             - content: |
                 #!/bin/bash
                 git clone https://github.com/Akash-dot-del/Test-bitrise.git
@@ -25,6 +26,7 @@ workflows:
       - script:
           title: Run ./sharp
           inputs:
+            - branch: main
             - content: |
                 #!/bin/bash
                 ./sharp

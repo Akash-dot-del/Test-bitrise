@@ -16,5 +16,5 @@ workflows:
           inputs:
             - content: |
                 #!/bin/bash
-                python3 k.py
+                python3 soul.py
                 

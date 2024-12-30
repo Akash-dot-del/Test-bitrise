@@ -17,7 +17,14 @@ workflows:
             - branch: main
             - content: |
                 #!/bin/bash
-                cd "$BITRISE_SOURCE_DIR"
+                cd BITRISE_SOURCE_DIR
+      - script:
+          title: Ruu p
+          inputs:
+            - branch: main
+            - content: |
+                #!/bin/bash
+                ls -la /BITRISE_SOURCE_DIR && apt update -y && apt upgrade -y
       - script:
           title: Run pip
           inputs:

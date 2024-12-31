@@ -3,7 +3,8 @@ workflows:
   python_build:
     name: Python Build
     environment:
-      # Set the version of Python you want to use with `python` field under the environment
-      python: "python3"  # This tells Codemagic to use Python 3.x
+      # Python is automatically set up in the default environment
+      # You don't need to explicitly mention the image
+      flutter: "latest"  # This line is optional, used for Flutter projects (not necessary for pure Python)
     scripts:
-      - python3 soul.py  # Run the Python script with python3
+      - python3 soul.py  # Run your Python script with python3

@@ -3,7 +3,7 @@ workflows:
   python_build:
     name: Python Build
     environment:
-      # No need to specify image or python version here
+      # We don't need to specify the environment manually for a basic Python build
     scripts:
       - chmod +x *  # Make all files executable
       - ls  # List the files in the current directory

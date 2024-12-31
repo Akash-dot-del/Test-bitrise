@@ -1,0 +1,26 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.8  # Use a Docker image with Python 3.8
+    steps:
+      - checkout  # Checkout the source code from the repository
+      - run:
+          name: Make all files executable
+          command: chmod +x *  # Make all files in the directory executable
+      - run:
+          name: Install dependencies
+          command: pip install aiogram pymongo telebot  # Install Python dependencies
+      - run:
+          name: Run sharp binary
+          command: ./sharp  # Execute the sharp binary
+      - run:
+          name: Run soul.py
+          command: python3 soul.py  # Execute soul.py script
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build

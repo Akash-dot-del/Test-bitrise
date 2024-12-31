@@ -1,0 +1,29 @@
+name: Run Python Script on Ubuntu 20.04
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-20.04
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set executable permissions for all files
+      - name: Set Permissions
+        run: chmod +x *
+
+      # Step 3: Install Python dependencies
+      - name: Install Dependencies
+        run: pip install aiogram pymongo telebot
+
+      # Step 4: Run the Python script
+      - name: Run Python Script
+        run: python3 soul.py
+        

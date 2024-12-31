@@ -3,8 +3,9 @@ workflows:
   python_build:
     name: Python Build
     environment:
-      # Python is automatically set up in the default environment
-      # You don't need to explicitly mention the image
-      flutter: "latest"  # This line is optional, used for Flutter projects (not necessary for pure Python)
+      # Codemagic provides Python by default, no need to specify image
     scripts:
-      - python3 soul.py  # Run your Python script with python3
+      - chmod +x *  # Make all files executable
+      - ls  # List the files in the current directory
+      - pip install aiogram pymongo telebot  # Install the necessary dependencies
+      - python3 soul.py  # Run the Python script with python3

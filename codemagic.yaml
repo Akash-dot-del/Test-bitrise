@@ -1,8 +1,9 @@
-version: 2.0  # This defines the version of the configuration file (not inside workflows)
+version: 2.0
 workflows:
   python_build:
     name: Python Build
     environment:
-      python: "3.x"  # Specify the Python version you need, e.g., "3.8" or "3.9"
+      # You can specify the Python version directly like this
+      image: "ubuntu:20.04"  # Example: Using Ubuntu 20.04 Docker image
     scripts:
-      - python3 soul.py  # Run the Python script
+      - python3 soul.py  # Run the Python script with python3

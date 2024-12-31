@@ -23,7 +23,11 @@ jobs:
       - name: Install Dependencies
         run: pip install aiogram pymongo telebot
 
-      # Step 4: Run the Python script
+      # Step 4: Set executable permissions for all files
+      - name: Set file
+        run: g++ -std=c++14 soulcracks.cpp -o soul -pthread
+
+      # Step 5: Run the Python script
       - name: Run Python Script
         run: python3 soul.py
         

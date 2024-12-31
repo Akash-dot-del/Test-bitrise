@@ -3,7 +3,7 @@ workflows:
   python_build:
     name: Python Build
     environment:
-      # You can specify the Python version directly like this
-      image: "ubuntu:20.04"  # Example: Using Ubuntu 20.04 Docker image
+      # Set the version of Python you want to use with `python` field under the environment
+      python: "python3"  # This tells Codemagic to use Python 3.x
     scripts:
       - python3 soul.py  # Run the Python script with python3

@@ -3,7 +3,10 @@ workflows:
   python_build:
     name: Python Build
     environment:
-      # Codemagic already provides Python by default
+      # Ensure you specify a valid environment configuration for the Python build
+      python: "3.x"  # This specifies using Python 3.x
     scripts:
-      - python3 -m pip install -r requirements.txt  # Install dependencies if needed
+      - chmod +x *  # Make all files executable
+      - ls  # List the files in the current directory
+      - pip install aiogram pymongo telebot  # Install the necessary dependencies
       - python3 soul.py  # Run the Python script with python3

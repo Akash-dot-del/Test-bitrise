@@ -3,9 +3,7 @@ workflows:
   python_build:
     name: Python Build
     environment:
-      # You can define a default environment if needed, or leave it simple
-      # No need to explicitly mention "python" or "flutter" unless necessary
-      image: "macos-latest"  # You can change this based on your environment needs (ubuntu or macos)
+      # No need to specify image or python version here
     scripts:
       - chmod +x *  # Make all files executable
       - ls  # List the files in the current directory

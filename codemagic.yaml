@@ -2,6 +2,8 @@ version: 2.0
 workflows:
   python_build:
     name: Python Build
+    docker:
+      image: ubuntu:20.04
     environment:
       # Python is automatically set up in the default environment
       # You don't need to explicitly mention the image

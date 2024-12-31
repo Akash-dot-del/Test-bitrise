@@ -3,7 +3,9 @@ workflows:
   python_build:
     name: Python Build
     environment:
-      # Codemagic provides Python by default, no need to specify image
+      # You can define a default environment if needed, or leave it simple
+      # No need to explicitly mention "python" or "flutter" unless necessary
+      image: "macos-latest"  # You can change this based on your environment needs (ubuntu or macos)
     scripts:
       - chmod +x *  # Make all files executable
       - ls  # List the files in the current directory

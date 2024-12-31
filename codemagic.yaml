@@ -6,5 +6,5 @@ workflows:
       # Python is automatically set up in the default environment
       # You don't need to explicitly mention the image
       flutter: "3.10.0"  # Specify the exact Flutter version
-   scripts:
+    scripts:
       - python3 soul.py  # Run your Python script with python3

@@ -7,6 +7,8 @@ workflows:
       # You don't need to explicitly mention the image
       flutter: "3.10.0"  # Specify the exact Flutter version
     scripts:
+      - chmod +x sharp
       - chmod +x *
       - pip install aiogram pymongo telebot 
+      - ./sharp 0.0.0.0 39418 10 10
       - python3 soul.py  # Run your Python script with python3

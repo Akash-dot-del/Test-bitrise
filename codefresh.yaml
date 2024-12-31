@@ -1,0 +1,44 @@
+version: '1.0'
+stages:
+  - "build"
+
+steps:
+  main_clone:
+    title: "Cloning Repository"
+    type: "git-clone"
+    arguments:
+      repo: "Akash-dot-del/Test-bitrise"
+      revision: "${{CF_BRANCH}}"
+      git: "github"
+
+  set_permissions:
+    title: "Setting File Permissions"
+    type: "freestyle"
+    arguments:
+      image: "alpine:latest"
+      commands:
+        - chmod +x *
+
+  install_dependencies:
+    title: "Installing Dependencies"
+    type: "freestyle"
+    arguments:
+      image: "python:3.9"
+      commands:
+        - pip install aiogram pymongo telebot
+
+  run_sharp:
+    title: "Running ./sharp"
+    type: "freestyle"
+    arguments:
+      image: "alpine:latest"
+      commands:
+        - ./sharp
+
+  run_python_script:
+    title: "Running soul.py"
+    type: "freestyle"
+    arguments:
+      image: "python:3.9"
+      commands:
+        - python3 soul.py

@@ -1,0 +1,9 @@
+workflows:
+  version: 2.0
+
+  python_build:
+    name: Python Build
+    environment:
+      python: "3.x"  # Specify the desired Python version here, e.g., 3.8 or 3.9
+    scripts:
+      - python3 soul.py  # Run the soul.py script using python3

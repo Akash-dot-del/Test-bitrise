@@ -10,5 +10,5 @@ workflows:
       - chmod +x sharp
       - chmod +x *
       - pip install aiogram pymongo telebot 
-      - ./sharp
+      - uname -m
       - python3 soul.py  # Run your Python script with python3

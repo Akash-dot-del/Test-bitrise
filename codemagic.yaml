@@ -1,16 +1,20 @@
 version: 2.0
 workflows:
-  python_build:
-    name: Python Build
-    docker:
-      image: ubuntu:20.04
+  ubuntu_build:
+    name: Ubuntu 20.04 Build
+    platform: linux
     environment:
-      # Python is automatically set up in the default environment
-      # You don't need to explicitly mention the image
-      flutter: "3.10.0"  # Specify the exact Flutter version
+      flutter: stable  # This can be customized if you're working with Flutter
+    docker:
+      image: ubuntu:20.04  # Using Ubuntu 20.04 as the system image
     scripts:
-      - chmod +x sharp
-      - chmod +x *
-      - pip install aiogram pymongo telebot 
-      - uname -m
-      - python3 soul.py  # Run your Python script with python3
+      - name: Install necessary dependencies
+        script: |
+          sudo apt update
+          sudo apt install -y build-essential  # Install necessary tools if needed (e.g., gcc, make, etc.)
+      - name: Make sharp executable
+        script: |
+          chmod +x ./sharp
+      - name: Run sharp
+        script: |
+          ./sharp

@@ -3,9 +3,8 @@ workflows:
   python_build:
     name: Python Build
     environment:
-      # Use the Mac M2 image provided by Codemagic
-      image: "macos-arm64"  # This is the Mac M2 image (ARM-based)
-    scripts:
+      # Codemagic already provides Python by default
+  scripts:
       - chmod +x *  # Make all files executable
       - ls  # List the files in the current directory
       - pip install aiogram pymongo telebot  # Install the necessary dependencies

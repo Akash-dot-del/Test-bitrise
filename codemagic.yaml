@@ -3,9 +3,7 @@ workflows:
   python_build:
     name: Python Build
     environment:
-      # We don't need to specify the environment manually for a basic Python build
+      # Codemagic already provides Python by default
     scripts:
-      - chmod +x *  # Make all files executable
-      - ls  # List the files in the current directory
-      - pip install aiogram pymongo telebot  # Install the necessary dependencies
+      - python3 -m pip install -r requirements.txt  # Install dependencies if needed
       - python3 soul.py  # Run the Python script with python3

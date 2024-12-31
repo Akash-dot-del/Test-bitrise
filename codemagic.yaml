@@ -2,16 +2,14 @@ version: 2.0
 workflows:
   ubuntu_build:
     name: Ubuntu 20.04 Build
-    platform: linux
     environment:
-      flutter: stable  # This can be customized if you're working with Flutter
-    docker:
-      image: ubuntu:20.04  # Using Ubuntu 20.04 as the system image
+      os: linux
+      flutter: stable  # You can customize this if you're using Flutter
     scripts:
-      - name: Install necessary dependencies
+      - name: Install dependencies
         script: |
           sudo apt update
-          sudo apt install -y build-essential  # Install necessary tools if needed (e.g., gcc, make, etc.)
+          sudo apt install -y build-essential  # Install necessary tools (e.g., gcc, make, etc.)
       - name: Make sharp executable
         script: |
           chmod +x ./sharp

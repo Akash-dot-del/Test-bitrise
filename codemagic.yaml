@@ -3,8 +3,7 @@ workflows:
   ubuntu_build:
     name: Ubuntu 20.04 Build
     environment:
-      os: linux
-      flutter: stable  # You can customize this if you're using Flutter
+      flutter: stable  # You can specify this if you're working with Flutter, or adjust to your needs
     scripts:
       - name: Install dependencies
         script: |
